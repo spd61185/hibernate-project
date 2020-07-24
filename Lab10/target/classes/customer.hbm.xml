@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+<hibernate-mapping>
+	<class name="com.satish.hibernate.Customer" table="lab10cust">  
+    <id name="cid" type="int">  
+     <generator class="increment"/>  
+    </id>  
+    <property name=firstname/>  
+    <property name="lastname"/>  
+    <property name="email"/>  
+    <property name="phone"/>  
+   	<many-to-one name="address" class="Address" cloumn="aid">
+	</class>
+</hibernate-mapping>

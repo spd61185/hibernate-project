@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">  
+<hibernate-mapping>
+	<class name="com.satish.hibernate.Address" table="lab10add">  
+    <id name="aid" type="int">  
+     <generator class="increment"/>  
+    </id>  
+    <property name="street"/>  
+    <property name="city"/>  
+    <property name="state"/>    
+	</class>
+</hibernate-mapping>
