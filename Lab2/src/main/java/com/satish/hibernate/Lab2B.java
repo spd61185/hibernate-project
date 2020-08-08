@@ -11,11 +11,17 @@ public class Lab2B {
 			SessionFactory sf = CHibernateUtil.getSessionFacotry();
 			Session session = sf.openSession();
 			tx = session.beginTransaction();
-			System.out.println("Record Fectched...");
-			Customer cust = session.load(Customer.class, 2);
-			System.out.println(cust.getCid()+"\t"+cust.getCname()+"\t"+cust.getEmail()+"\t"+cust.getCity()+"\t"+cust.getPhone()+"\t"+cust.getBal());
+			Customer cust = session.get(Customer.class, 1);
+			session.getTransaction().commit();
+			session.close();
 			
-			tx.commit();
+			//System.out.println(cust.getCid()+"\t"+cust.getCname()+"\t"+cust.getEmail()+"\t"+cust.getCity()+"\t"+cust.getPhone()+"\t"+cust.getBal());
+			
+			Session session2 = sf.openSession();
+			session2.beginTransaction();
+			Customer cust1 = session2.get(Customer.class, 1);
+			session2.getTransaction().commit();
+				
 			session.close();
 			
 		}catch (Exception e) {
